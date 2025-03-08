@@ -9,9 +9,10 @@ module.exports.handler = async (event) => {
     return {
       statusCode: 200,
       body: JSON.stringify(
-        data,
+        {data: data, table_name: process.env['CUSTOMERS_TABLE']},
         null,
-        2
+        2,
+
       ),
     };
 
