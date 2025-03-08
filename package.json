@@ -1,0 +1,23 @@
+{
+  "name": "serverless-tienda-project",
+  "version": "1.0.0",
+  "description": "Project to practice serverless AWS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joespi/serverless-tienda-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joespi/serverless-tienda-project/issues"
+  },
+  "homepage": "https://github.com/joespi/serverless-tienda-project#readme",
+  "devDependencies": {
+    "serverless": "^3.38.0"
+  }
+}
