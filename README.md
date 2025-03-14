@@ -74,3 +74,11 @@ PUT /orders/{order_id} -> { client_id: string, products: [{product_id: string, q
 - Ambientes:
     - Pruebas/Integración/Temporales
     - Productivo
+
+
+
+    TODO:
+
+    - Joaco -> Crear Lambda y tabla de pedidos (seeder para llenar la tabla y que la lambda retorne los pedidos guardados en la tabla)
+    - Andres -> Crear Lambda y tabla de productos (seeder para llenar la tabla y que la lambda retorne los pedidos guardados en la tabla )
+    - Repasamos completando la lambda y tabla de customers
