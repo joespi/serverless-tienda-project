@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "target": "ES2022",
+    "outDir": ".esbuild",
+    "moduleResolution": "node",
+    "lib": [
+      "es2022"
+    ],
+    "rootDir": "./",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
