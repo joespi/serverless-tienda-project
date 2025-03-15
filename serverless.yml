@@ -12,6 +12,8 @@ provider:
 stages:
   default:
 
+package:
+  individually: true
 
 functions:
   customer:
