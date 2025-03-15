@@ -2,9 +2,12 @@
 service: serverless-tienda-project
 frameworkVersion: "3"
 
+plugins:
+  - serverless-esbuild
+
 provider:
   name: aws
-  runtime: nodejs18.x
+  runtime: nodejs20.x
 
 stages:
   default:
@@ -15,6 +18,14 @@ functions:
     handler: src/infra/handlers/customer.handler
     environment: 
       CUSTOMERS_TABLE: !Ref CustomersTable
+  product-controller:
+    handler: src/infra/handlers/products.handler
+    environment: 
+      PRODUCTS_TABLE: !Ref ProductsTable
+    events:
+      - http:
+        path: /products
+        method: ANY
 
 
 # you can add CloudFormation resource templates here
@@ -26,13 +37,27 @@ resources:
         TableName: customers-table-${sls:stage}
         BillingMode: PAY_PER_REQUEST
         AttributeDefinitions:
-          - AttributeName: customer_id
+          - AttributeName: id
             AttributeType: S
         KeySchema:
-          - AttributeName: customer_id
+          - AttributeName: id
+            KeyType: HASH
+    ProductsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: products-table-${sls:stage}
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
             KeyType: HASH
 
   Outputs:
     CustomersTableName:
       Description: "customers dynamodb table name"
       Value: !Ref CustomersTable
+    ProductsTableName:
+      Description: "products dynamodb table name"
+      Value: !Ref ProductsTable

@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/joespi/serverless-tienda-project#readme",
   "devDependencies": {
-    "serverless": "^3.38.0"
+    "serverless": "^3.38.0",
+    "serverless-esbuild": "^1.55.0"
+  },
+  "dependencies": {
+    "@middy/core": "^6.1.5",
+    "@middy/http-router": "^6.1.5"
   }
 }
