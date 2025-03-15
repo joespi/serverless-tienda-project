@@ -18,7 +18,7 @@ functions:
     handler: src/infra/handlers/customer.handler
     environment: 
       CUSTOMERS_TABLE: !Ref CustomersTable
-  product-controller:
+  products-handler:
     handler: src/infra/handlers/products.handler
     environment: 
       PRODUCTS_TABLE: !Ref ProductsTable
